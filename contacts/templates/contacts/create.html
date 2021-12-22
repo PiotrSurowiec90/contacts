@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c9dde9618c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'contacts/style_edit.css' %}">
+    <title>Edit Contact</title>
+</head>
+<body>
+  <form action="" method="POST">
+  {% csrf_token %}
+  <div class="container">
+    <header class="hero">
+      <a href="{% url 'contacts:index' %}">
+        <i class="fas fa-arrow-circle-left back-btn"></i>
+      </a>
+      <div class="hero-info">
+        <h1 class="name">Add New Contact</h1>
+      </div>
+    </header>
+    <section class="contact-info">
+      
+      <div class="info-line">
+        <i class="fas fa-users icon-gradient"></i>
+        {{ form.name }}
+      </div>
+      <div class="info-line">
+        <i class="fas fa-user-friends icon-gradient"></i>
+        {{ form.relationship }}
+      </div>
+      <div class="info-line">
+        <i class="fas fa-envelope-open icon-gradient"></i>
+        {{ form.email}}
+      </div>
+      <div class="info-line">
+        <i id="location" class="fas fa-map-marker-alt icon-gradient"></i>
+        {{ form.adress }}
+      </div>
+      <div class="info-line">
+        <i class="fas fa-phone icon-gradient"></i>
+        {{ form.phone }}
+      </div>
+    </section>
+    <section class="button-container">
+        <div class="update-contact">
+          <i class="fas fa-save icon-gradient"></i>
+          <input type="submit" class="button" value="Save Contact">
+        </div>
+    </section>
+  </div>
+</form>
+</body>
+</html>

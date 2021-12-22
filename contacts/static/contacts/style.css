@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/inter/v3/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    color: #fff;
+    
+}
+.container {
+    max-width: 428px;
+    margin: 0 auto;
+    background-color: #313438;
+    min-height:  100vh;
+    
+}
+.header {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(102,148,76,1) 1%, rgba(38,167,51,1) 23%, rgba(0,255,21,1) 73%); 
+    padding: 2em 0;
+    align-items: center;
+    border: 1px solid #fff;
+}
+.contact-search {
+    font-size: 1.2em;
+    padding: .3em;
+    border-radius: 100px;
+    outline: none;
+}
+i {
+    font-size: 1.5em;
+}
+.contact-name {
+    font-size: 1.2em;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+hr {
+    border: .3px solid #fff;
+}
+.list-item {
+    list-style: none;
+
+}
+.relationship{
+    width: 6em;
+    text-align: center;
+    padding: .4em .5em;
+    border-radius: 100px;
+    border-top-left-radius: 0;
+    background-color: #75a85e;
+    font-size: .8em;
+}
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5em;
+    transition: 0.3s;
+}
+.contact-section:hover{
+    background-color: #494a4b;
+}
+.text {
+    padding-left: 1em;
+}
+a {
+    text-decoration: none;
+    color:#fff;
+}

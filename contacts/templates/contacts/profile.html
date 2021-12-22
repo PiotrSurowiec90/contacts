@@ -1,0 +1,47 @@
+{% load static %}
+<html>
+  <head>
+    <title>Contact Profile Page</title>
+      <script src="https://kit.fontawesome.com/c9dde9618c.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" type="text/css" href="{% static 'contacts/style_profile.css' %}">
+  </head>
+</html>
+<body>
+  <div class="container">
+    <header class="hero">
+      <a href="{% url 'contacts:index' %}">
+        <i class="fas fa-arrow-circle-left back-btn"></i>
+      </a>
+      <div class="hero-info">
+        <h1 class="name">{{ contact.name }}</h1>
+        <p class="relationship">{{ contact.relationship }}</p>
+      </div>
+    </header>
+    <section class="contact-info">
+      <div class="info-line">
+        <i class="fas fa-phone icon-gradient"></i>
+        <p class="phone-number"> {{ contact.phone }}</p>
+      </div>
+      <div class="info-line">
+        <i class="fas fa-sms text icon-gradient"></i>
+        <p class="sms"> Send Message</p>
+      </div>
+      <div class="info-line">
+        <i class="fas fa-envelope-open icon-gradient"></i>
+        <p class="email"> {{ contact.email }}</p>
+      </div>
+      <div class="info-line">
+        <i id="location" class="fas fa-map-marker-alt icon-gradient"></i>
+        <p class="adress"> {{ contact.adress }}</p>
+      </div>
+    </section>
+    
+    <a href="{% url 'contacts:edit' contact.id %}">
+      <section class="edit-contact">
+        <div class="edit-btn">
+          <i class="fas fa-cogs icon-gradient"></i>
+        </div>
+      </section>
+    </a>
+  </div>
+</body>

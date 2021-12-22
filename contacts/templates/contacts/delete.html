@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c9dde9618c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'contacts/style_delete.css' %}">
+    <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <a href="{% url 'contacts:index' %}">
+        <i class="fas fa-arrow-circle-left back-btn"></i>
+      </a>
+      <div class="hero-info">
+        <h1 class="name">{{ contact.name }}</h1>
+        <p class="relationship">{{ contact.relationship }}</p>
+      </div>
+    </header>
+    <section class="delete-container">
+      <p>Are You sure You want to delete this contact</p>
+    </section>
+    <section class="button-container">
+        <div class="delete-contact">
+          <form action="" method="POST">
+            <i class="fas fa-check-circle icon-gradient"></i>
+            {% csrf_token %}
+            <button name="submit" class="button">Confirm</button>
+          </form>
+        </div>
+    </section>
+  </div>
+</body>
+</html>

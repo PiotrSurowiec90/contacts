@@ -1,0 +1,40 @@
+{% load static %}
+<html>
+    <head>
+        <title>Contact List App</title>
+        <script src="https://kit.fontawesome.com/c9dde9618c.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'contacts/style.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <form method="GET" class="contact-search">
+                  {{ filter.form }}
+                  <input id="btn" type="submit" value="Search">
+                </form>
+                <a href="{% url 'contacts:create' %}"><i class="fas fa-plus-circle"></i></a>
+            </header>
+            <section class="contact-library">
+                <ul class="contacts-lists">
+                    {% for contact in contacts %}
+                    <a href="{% url 'contacts:profile' contact.pk %}">
+                        <div class="contact-section">
+                            <li class="list-item">
+                                <p class="contact-name">{{ contact.name }}</p>
+                                <p class="relationship">{{ contact.relationship }}</p>
+                            </li>
+                            <li class="list-item">
+                                <i class="fas fa-phone"></i>
+                                <i class="fas fa-sms text"></i>
+                            </li>
+                        </div>
+                    </a>
+                    {% endfor %}
+
+
+
+                </ul>
+            </section>
+        </div>
+    </body>
+</html>
